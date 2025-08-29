@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/portfolio-styles.css') }}" rel="stylesheet">
+    <title>Portfolio - Keryx Akintoye</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#2C2C2C"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#main-hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <ul>
+            <li id="logo"><a href="#">KA</a>
+            <li class="hideOnMobile"><a href="#main-hero">Home</a></li>
+            <li class="hideOnMobile"><a href="#about">About</a></li>
+            <li class="hideOnMobile"><a href="#Projects">Projects</a></li>
+            <li class="hideOnMobile"><a href="#Contact">Contact</a></li>
+            <li class="menu-button" onclick="showSIdebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#2C2C2C"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Main Hero -->
+     <div class="main-hero" id="main-hero">
+        <div class="status appears-on-mobile">
+            <h4>Currently Working On</h4>
+            <p>Flask Backend Systems</p>
+            <div id="status-technologies">
+                <span>Python</span><span>Web Design</span><span>Flask</span>
+            </div>
+        </div>
+        <div id="left-side">
+            <h1>Keryx Akintoye</h1>
+            <div class="animated-text">
+                <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+            </div>
+                <p>
+                    I enjoy crafting digital experiences that blend innovative design with robust functionality. Passionate about figuring things out.
+                </p>
+                <div id="main-hero-buttons">
+                <button id="btn-primary">View My Work</button>
+                <button id="btn-secondary">Get in Touch</button>
+            </div>
+        </div>
+        <div id="right-side">
+            <img src="../static/assets/Screenshot 2025-08-27 at 18.48.00.png" width="300px" alt="Image-of-Keryx-Akintoye" id="hero-img">
+            <div class="status dissappears-on-mobile">
+                <h4>Currently Working On</h4>
+                <p>Flask Backend Systems</p>
+                <div id="status-technologies">
+                    <span>Python</span><span>Web Design</span><span>Flask</span>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- Aboout Me -->
+     <div class="about-me-section" id="about">
+        <h1>About Me</h1>
+        <p>I'm a detail-oriented team player with a passion for programming. I love football ⚽️, video-games🎮, movies🎬, and music 🎧. My favourite programming language is <b>Python</b>. I also fancy cooking 🥘 from time to time.</p>
+     </div>
+
+
+    <!-- Projects -->
+     <div class="projects" id="Projects">
+        <h1 data-aos="fade-up">Featured Projects</h1>
+        <div class="projects-container">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                <div id="project-image" style="background-image: url('https://h2g6j3q2.delivery.rocketcdn.me/wp-content/uploads/2025/04/ckyycvha3000c7b9gfipieqcb.jpg');"></div>
+                <h3>Amazon Price Tracker</h3>
+                <p>Tracks the price of any Amazon product of your choice, letting you monitor changes over time.</p>
+                <div class="project-technologies">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>React</span>
+                </div>
+                <a href="#projects-section">View Project</a>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div id="project-image" style="background-image: url('https://veryutils.com/image/cache/mpseller/customer-30/snake3-500x500.png')"></div>
+                <h3>Snake Game</h3>
+                <p>A Python rendition of one of the greatest games of all time (in my opinion at least), built purely for fun and practice.</p>
+                <div class="project-technologies">
+                    <span>Python</span>
+                    <span>Turtle graphics</span>
+                </div>
+                <a href="#projects-section">View Project</a>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div id="project-image" style="background-image: url('https://nycdsa-blog-files.s3.us-east-2.amazonaws.com/2016/11/billboard_hot100.png')"></div>
+                <h3>Billboard Hot 100</h3>
+                <p>Uses'Spotipy' to create a Spotify playlist of Billboard's hot 100 songs for any date of your choice.</p>
+                <div class="project-technologies">
+                    <span>Python</span>
+                    <span>Requests</span>
+                    <span>Spotipy</span>
+                </div>
+                <a href="#projects-section">View Project</a>
+            </div>
+        </div>
+        <a href="{{ url_for('projects') }}" id="more-projects">View More Projects</a>
+     </div>
+
+
+     <!-- Contact Me -->
+    <div class="contact" id="Contact">
+        {% if submitted %}
+            <h1>Message Sent</h1>
+        {% else %}
+        <h1>Contact Me</h1>
+        {% endif %}
+        <button id="contact-button">Get in Touch</button>
+        <p>I always reply in like... a week 🙃</p>
+    </div>
+
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contact Form</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <input type="text" id="f-name" name="f-name" placeholder="First Name">
+                    <br><br>
+                    <input type="text" id="l-name" name="l-name" placeholder="Last Name">
+                    <br><br>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                    <br><br>
+                    <textarea name="message" id="message" rows="5" cols="50" placeholder="Message"></textarea>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!-- footer -->
+    {% include "footer.html" %}
+
+
+     <!-- Javascript -->
+     <script>
+        const texts = [
+            'Full-Stack Developer',
+            'Data Analyst', 
+            'Video Editor'
+        ];
+        
+        let count = 0;        // Tracks which text we're currently on (0, 1, or 2)
+        let index = 0;        // Tracks how many characters we've typed/erased
+        let currentText = ''; // Holds the current text being animated
+        let letter = '';      // Holds the portion of text currently displayed
+        
+        const typedElement = document.querySelector('.typed-text');
+        const cursorElement = document.querySelector('.cursor');
+        
+        function type() {
+            if (count === texts.length) {
+                count = 0; // Reset to first text when we reach the end
+            }
+            currentText = texts[count]; // Get current text to type
+            letter = currentText.slice(0, ++index); // Get substring from start to current position
+            
+            typedElement.textContent = letter; // Display the letters on screen
+            
+            if (letter.length === currentText.length) {
+                // Checks if we've finished typing the complete word
+                cursorElement.classList.remove('typing');  // Starts blinking
+                setTimeout(() => {
+                    cursorElement.classList.add('typing'); // Stops blinking
+                    erase();
+                }, 3000);
+            } else {
+                setTimeout(type, 100); // Continue typing after 100ms
+            }
+        }
+        
+        function erase() {
+            if (index > 0) {
+                letter = currentText.slice(0, --index);
+                typedElement.textContent = letter;
+                setTimeout(erase, 50);
+            } else {
+                count++;
+                cursorElement.classList.remove('typing');
+                setTimeout(type, 500);
+            }
+        }
+        
+        // Start the animation
+        setTimeout(type, 1000);
+
+        // Navbar Functionality
+      
+        function showSIdebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("contact-button");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration in ms
+        once: false      // Animate only once while scrolling down
+      });
+    </script>
+</body>
+</html>
