@@ -570,7 +570,7 @@ nav li:first-child{
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    align-items
+    align-items: center;
 }
 .project-card {
     width: 325px;
@@ -581,7 +581,6 @@ nav li:first-child{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Prevents content from exceeding borders */
     margin: 0 30px;
-
 }
 .project-card:hover{
     border: 2px solid var(--primary);
@@ -700,7 +699,7 @@ nav li:first-child{
         margin:0 0 10px 0 ;
     }
     .projects h1{
-        font-size: 35px;
+        font-size: 50px;
     }
 }
 
@@ -905,6 +904,12 @@ nav li:first-child{
         min-height: 100px;
     }
 }
+@media (max-height: 761px) {
+    .contact p{
+        margin-bottom: 50px;
+    }
+
+}
 
 /* --------------------------- Footer Section ----------------------------------- */
 .footer{
@@ -937,3 +942,9 @@ nav li:first-child{
 .footer p{
     color: var(--text-muted);
 }
+
+@media (max-width: 600px) {
+    .footer p{
+    font-size: 12px;
+    }
+   }

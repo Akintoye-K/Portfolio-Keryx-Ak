@@ -6,6 +6,7 @@ from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import Integer
 import os
 from dotenv import find_dotenv, load_dotenv
+import gunicorn
 
 # ---------------------------- APP AND DATABASE SETUP ------------------------------
 
